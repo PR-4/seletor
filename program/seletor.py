@@ -11,14 +11,15 @@ import time as t
 ini = t.time()
 
 # leitura da tabela da ANP
-ANP = pd.read_excel(open('../input/tabela-de-pocos.xlsx', 'rb'),index_col=0 ,sheet_name='Planilha1',header=0)
+ANP = pd.read_excel(open('../input/tabela-de-pocos.xlsx', 'rb') ,index_col= 0, sheet_name='Planilha1',header=0)
 
 # leitura do arquivo de seleção
 lista = ['3-FQ-21-ES','7-CAM-114-RN','4-LD-7-ES']
 
 # seletor
-seletor = ANP.loc[lista]
 
+seletor = ANP.loc[lista]
+seletor = seletor.reset_index()
 print(seletor)
 
 
