@@ -23,7 +23,11 @@ import equations as cot
 
 # leitura do dado de entrada e criação do dataframe
 
-poco = pd.read_csv('../input/1BRSA1007RJS.csv', sep=';', low_memory = False, header=0) 
+poco = pd.read_csv('../input/1BRSA1007RJS.csv', sep=';', low_memory = False, header=0, index_col=1) 
+
+# Retira a segunda linha
+poco.drop(axis=0)
+
 
 # Mostra as 5 primeiras linhas do arquivo de entrada
 
